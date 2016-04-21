@@ -10,5 +10,6 @@
         /*
          * 3rd Party modules
          */
-        'restangular', 'ui.router', 'toastr']);
+        'restangular', 'ui.router', 'toastr', 'ui.bootstrap'
+    ]);
 })();
