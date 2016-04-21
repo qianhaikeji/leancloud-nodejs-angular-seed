@@ -5,7 +5,6 @@
         .module('app')
         .filter('range', range)
         .filter('timeAgo', timeAgo)
-        .filter('salaryFilter',salaryFilter)
         .filter('megaNum', megaNum);
 
     function range() {
