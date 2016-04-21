@@ -1,9 +1,7 @@
+.avoscloud/
 node_modules/
-bower_components/
-.sass-cache/
-.idea/
-.tmp/
-dist/
+npm-debug.log
+.avoscloud/
 .DS_Store
 .DS_Store?
 *.swp
