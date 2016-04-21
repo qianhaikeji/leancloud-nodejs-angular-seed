@@ -92,25 +92,16 @@ gulp.task('other', function () {
 
 // 将 dist 目录中的文件移动到 LeanEngine 的发布目录中
 function moveToPublic() {
-  $.del([
-    path.join(conf.paths.public, '/**/*.*')
+  gulp.src([
+    conf.paths.dist + '/**/*.*'
   ], {
-    force: true
-  }, function() {
-
-    // the base option sets the relative root for the set of files,
-    // preserving the folder structure
-    gulp.src([
-      conf.paths.dist + '/**/*.*'
-    ], {
-      base: './dist'
-    })
-    .pipe(gulp.dest(conf.paths.public));
-  });
+    base: './dist'
+  })
+  .pipe(gulp.dest(conf.paths.public));
 }
 
 gulp.task('clean', function () {
-  return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
+  return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/'), path.join(conf.paths.public, '/**/*.*')]);
 });
 
 gulp.task('build', ['html', 'fonts', 'other'], function() {
